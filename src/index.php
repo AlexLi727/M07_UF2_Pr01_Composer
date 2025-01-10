@@ -8,11 +8,10 @@
 <body>
     <h1> Car workshop </h1>
     <h2> Select Role</h2>
-    <form action = "View/ViewReparation.php">
-        <select>
-            <option> User </option>
-            <option> Employee </option>
-            <option> Developer </option>
+    <form action = "View/ViewReparation.php" method = "POST">
+        <select name = "role">
+            <option value = "user"> User </option>
+            <option value = "employee"> Employee </option>
         </select>
         <input type = "submit">
     </form>
