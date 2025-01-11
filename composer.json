@@ -2,9 +2,10 @@
     "name": "alexli/m07_uf2_composer",
     "type": "project",
     "license": "Free",
+    
     "autoload": {
         "psr-4": {
-            "Alexli\\M07Uf2Composer\\": "src/"
+            "Workshop\\": "src/"
         }
     },
     "authors": [

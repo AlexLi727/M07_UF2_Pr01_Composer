@@ -1,3 +1,10 @@
+<?php 
+namespace Workshop\View;
+
+use Workshop\Model\Reparation;
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +14,7 @@
 </head>
 <body>
     <?php
+
         session_start();
         if(isset($_POST["role"])){
             $_SESSION["role"] = $_POST["role"];
@@ -20,15 +28,25 @@
                 echo $reparation->name_workshop;
                 echo $reparation->register_date;
                 echo $reparation->license_plate;
+
+                echo "
+                <ul>
+                    <li> UUID: ".$reparation->id_reparation."</li>
+                    <li> ID Workshop: ".$reparation->id_workshop."</li>
+                    <li> Name: ".$reparation->name_workshop."</li>
+                    <li> Register Date: ".$reparation->register_date."</li>
+                    <li> License Plate: ".$reparation->license_plate."</li>
+                </ul>
+                ";
             }
         }
     ?>
     <h1> Car Workshop Reparation Menu </h1>
     <h2> Search car reparation </h2>
-    <form>
+    <form action = "../Controller/ControllerReparation.php" method = "GET">
         id reparation number:
-        <input type = "text"> <br>
-        <input type = "submit" value = "search">
+        <input type = "text" name = "id_reparation" minlength = "36" maxlength = "36"> <br>
+        <input type = "submit" value = "search" name = "getReparation">
     </form>
 
     <?php
@@ -36,7 +54,7 @@
     ?>
 
     <h2> Create car reparation </h2>
-    <form>
+    <form action = "./ViewReparation.php" method = "POST">
         Workshop ID (4 digits): <input type = "text" name = "id_workshop" maxlength = "4" required> <br>
         Workshop Name (up to 12 characters): <input type = "text" name = "name_workshop" maxlength = "12" required> <br>
         Register Date (yyyy-mm-dd): <input type = "text" name = "register_date" pattern = "\d{4}-\d{2}-\d{2}" required> <br>

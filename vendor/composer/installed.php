@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'alexli/m07_uf2_composer',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => 'e9ae2a2436d7e6d133cc63d1645b73ba77910aa4',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         'alexli/m07_uf2_composer' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => 'e9ae2a2436d7e6d133cc63d1645b73ba77910aa4',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -38,9 +38,9 @@
             'dev_requirement' => false,
         ),
         'intervention/image' => array(
-            'pretty_version' => '3.9.1',
-            'version' => '3.9.1.0',
-            'reference' => 'b496d1f6b9f812f96166623358dfcafb8c3b1683',
+            'pretty_version' => '3.10.2',
+            'version' => '3.10.2.0',
+            'reference' => '1c68e5fdf443374f3580c5b920a7f177eccdab85',
             'type' => 'library',
             'install_path' => __DIR__ . '/../intervention/image',
             'aliases' => array(),

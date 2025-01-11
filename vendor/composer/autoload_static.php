@@ -11,6 +11,10 @@ class ComposerStaticInitd900bbe79ddfff7e5f6aed5589513381
     );
 
     public static $prefixLengthsPsr4 = array (
+        'W' => 
+        array (
+            'Workshop\\' => 9,
+        ),
         'R' => 
         array (
             'Ramsey\\Uuid\\' => 12,
@@ -33,13 +37,13 @@ class ComposerStaticInitd900bbe79ddfff7e5f6aed5589513381
         array (
             'Brick\\Math\\' => 11,
         ),
-        'A' => 
-        array (
-            'Alexli\\M07Uf2Composer\\' => 22,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'Workshop\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/src',
+        ),
         'Ramsey\\Uuid\\' => 
         array (
             0 => __DIR__ . '/..' . '/ramsey/uuid/src',
@@ -67,10 +71,6 @@ class ComposerStaticInitd900bbe79ddfff7e5f6aed5589513381
         'Brick\\Math\\' => 
         array (
             0 => __DIR__ . '/..' . '/brick/math/src',
-        ),
-        'Alexli\\M07Uf2Composer\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/src',
         ),
     );
 
