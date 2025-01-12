@@ -41,7 +41,7 @@ class ControllerReparation{
         $id_reparation = $_GET["id_reparation"];
 
         $service = new ServiceReparation();
-        $reparation = $service->getReparation($id_reparation);
+        $reparation = $service->getReparation($id_reparation, $_SESSION["role"]);
 
         $view = new ViewReparation();
         $view->render($reparation);
