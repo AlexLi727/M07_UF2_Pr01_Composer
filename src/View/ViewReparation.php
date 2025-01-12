@@ -3,6 +3,8 @@ namespace Workshop\View;
 
 use Workshop\Model\Reparation;
 
+require_once "../../vendor/autoload.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -23,21 +25,24 @@ use Workshop\Model\Reparation;
             public Reparation $reparation;
 
             public function render ($reparation){
-                echo $reparation->id_reparation;
-                echo $reparation->id_workshop;
-                echo $reparation->name_workshop;
-                echo $reparation->register_date;
-                echo $reparation->license_plate;
+                if($reparation->id_reparation === ""){
+                    echo "
+                        UUID not found in data base
+                    ";
 
-                echo "
-                <ul>
-                    <li> UUID: ".$reparation->id_reparation."</li>
-                    <li> ID Workshop: ".$reparation->id_workshop."</li>
-                    <li> Name: ".$reparation->name_workshop."</li>
-                    <li> Register Date: ".$reparation->register_date."</li>
-                    <li> License Plate: ".$reparation->license_plate."</li>
-                </ul>
-                ";
+                    
+                }else{ ?>
+                    <ul>
+                        <li> UUID: <?php echo $reparation->id_reparation ?></li>
+                        <li> ID Workshop: <?php echo $reparation->id_workshop ?></li>
+                        <li> Name: <?php echo $reparation->name_workshop ?></li>
+                        <li> Register Date: <?php echo $reparation->register_date ?></li>
+                        <li> License Plate: <?php echo $reparation->license_plate ?></li>
+                    </ul>
+                    <img src = "data:image/*;base64,<?php echo $reparation->image;?>" alt = "SI">
+                   
+                <?php
+                }
             }
         }
     ?>
@@ -54,13 +59,13 @@ use Workshop\Model\Reparation;
     ?>
 
     <h2> Create car reparation </h2>
-    <form action = "./ViewReparation.php" method = "POST">
+    <form action = "../Controller/ControllerReparation.php" method = "POST" enctype = "multipart/form-data">
         Workshop ID (4 digits): <input type = "text" name = "id_workshop" maxlength = "4" required> <br>
         Workshop Name (up to 12 characters): <input type = "text" name = "name_workshop" maxlength = "12" required> <br>
         Register Date (yyyy-mm-dd): <input type = "text" name = "register_date" pattern = "\d{4}-\d{2}-\d{2}" required> <br>
         License Plate (9999-XXX): <input type = "text" name = "license_plate" pattern = "\d{4}-[A-Za-z]{3}" required> <br>
-        Photo of Damaged Vehicle: <br>
-        <input type = "submit" value = "create">
+        Photo of Damaged Vehicle: <input type = "file" name = "image"><br>
+        <input type = "submit" value = "create" name = "insertReparation" accept = "image/*">
     </form>
     <?php } ?>
 </body>

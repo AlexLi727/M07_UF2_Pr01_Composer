@@ -16,7 +16,7 @@ if(isset($_GET["getReparation"])){
     $controller->getReparation();
 }
 
-if(isset($_POST["create"])){
+if(isset($_POST["insertReparation"])){
     $controller->insertReparation();
 }
 class ControllerReparation{
@@ -26,9 +26,11 @@ class ControllerReparation{
         $name_workshop = $_POST["name_workshop"];
         $register_date = $_POST["register_date"];
         $license_plate = $_POST["license_plate"];
+        $image = file_get_contents($_FILES["image"]["tmp_name"]);
+        $imageCoded = base64_encode($image);
 
         $service = new ServiceReparation();
-        $reparation = $service->insertReparation($id_workshop, $name_workshop, $register_date, $license_plate);
+        $reparation = $service->insertReparation($id_workshop, $name_workshop, $register_date, $license_plate, $imageCoded);
 
         $view = new ViewReparation();
         $view->render($reparation);

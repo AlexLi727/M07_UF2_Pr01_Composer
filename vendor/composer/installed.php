@@ -3,7 +3,7 @@
         'name' => 'alexli/m07_uf2_composer',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'e9ae2a2436d7e6d133cc63d1645b73ba77910aa4',
+        'reference' => '4bcf21133278d0d2f0e727cbe8fc01c68b6271c6',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'alexli/m07_uf2_composer' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'e9ae2a2436d7e6d133cc63d1645b73ba77910aa4',
+            'reference' => '4bcf21133278d0d2f0e727cbe8fc01c68b6271c6',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

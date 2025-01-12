@@ -8,13 +8,15 @@ class Reparation{
     public $name_workshop;
     public $register_date;
     public $license_plate;
+    public $image;
 
-    public function __construct ($id_reparation, $id_workshop, $name_workshop, $register_date, $license_plate){
+    public function __construct ($id_reparation, $id_workshop, $name_workshop, $register_date, $license_plate, $image){
         $this->id_reparation = $id_reparation;
         $this->id_workshop = $id_workshop;
         $this->name_workshop = $name_workshop;
         $this->register_date = $register_date;
         $this->license_plate = $license_plate;
+        $this->image = $image;
     }
 
     public function getId_reparation(){
